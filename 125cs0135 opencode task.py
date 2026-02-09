@@ -66,12 +66,22 @@ def evaluate_knn(k, metric):
 
 k_values = [1, 3, 5]
 
+best_accuracy=0
+best_k=None
+best_metric=None
+best_mis=None
+
 for metric in ["euclidean", "manhattan"]:
     print(f"\nResults using {metric.capitalize()} Distance:")
     for k in k_values:
         acc, mis = evaluate_knn(k, metric)
         print(f"K = {k} | Accuracy = {acc:.4f} | Misclassified = {len(mis)}")
+    if acc>best_accuracy:
+        best_accuracy=acc
+        best_k=k
+        best_metric=metric
+        best_mis=mis
 
-print("\n First 10 misclassifications for K=5 (True_class --> Predicted_class):")
+print("\n First 10 misclassifications of the most accuracte model (True_class --> Predicted_class):")
 for i,true_label,pred_label in mis[:10]:
     print(f"{class_names[true_label]}  -->  {class_names[pred_label]}")
