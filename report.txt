@@ -1,5 +1,3 @@
-Task 1: Distance-Based Classification from Scratch
-
 1. Objective
 The objective of this task is to implement a distance-based classification algorithm
 from scratch to understand how similarity between data points is used for prediction.
@@ -10,11 +8,9 @@ learning libraries.
 The Fashion-MNIST dataset was used.
 It contains grayscale images of clothing items belonging to 10 different classes.
 Each image is of size 28×28 pixels.
-
 For computational efficiency, a subset of the dataset was used:
 - Training samples: 5000
 - Test samples: 500
-
 Each image was flattened into a 784-dimensional numerical feature vector and
 normalized to the range [0, 1].
 
@@ -27,28 +23,22 @@ The predicted class is determined using majority voting.
 
 4. Distance Metrics Used
 Two distance metrics were implemented and compared:
-
 a) Euclidean Distance:
 This metric measures the straight-line distance between two feature vectors.
 It is suitable for continuous numerical data such as image pixel values.
-
 b) Manhattan Distance:
 This metric measures distance as the sum of absolute differences between feature
 values. It can be more robust to small variations in pixel intensity.
 
 5. Evaluation Method
 Model performance was evaluated using classification accuracy:
-
 Accuracy = (Number of Correct Predictions) / (Total Test Samples)
-
 Misclassified samples were stored for further analysis.
 
 6. Effect of K
 The algorithm was tested with different values of K (K = 1, 3, 5).
-
 - Smaller K values are sensitive to noise and can lead to overfitting.
 - Larger K values provide smoother decision boundaries but may underfit.
-
 The best K value was selected based on accuracy for each distance metric.
 
 7. Misclassification Analysis
@@ -56,7 +46,6 @@ Misclassifications mainly occurred between visually similar classes such as:
 - T-shirt vs Shirt
 - Sneaker vs Sandal
 - Coat vs Pullover
-
 These errors occur due to overlapping visual features in pixel-based representations.
 
 8. Conclusion
@@ -64,3 +53,4 @@ KNN was successfully implemented from scratch using both Euclidean and Manhattan
 distance metrics and evaluated on the Fashion-MNIST dataset.
 The experiment demonstrated how distance-based classification works and how the
 choice of K and distance metric affects model performance.
+
