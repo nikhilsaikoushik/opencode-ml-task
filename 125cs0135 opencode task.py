@@ -1,6 +1,7 @@
 import numpy as np
 from tensorflow.keras.datasets import fashion_mnist
 
+class_names=["T-shirt","Trouser","Pullover","Dress","Coat","Sandal","Shirt","Sneaker","Bag","Ankle boot"]
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 
 TRAIN_SAMPLES = 5000
@@ -71,6 +72,6 @@ for metric in ["euclidean", "manhattan"]:
         acc, mis = evaluate_knn(k, metric)
         print(f"K = {k} | Accuracy = {acc:.4f} | Misclassified = {len(mis)}")
 
-print("\nSample misclassified cases (index, true label, predicted label):")
-for m in mis[:10]:
-    print(m)
+print("\n First 10 misclassifications for K=5 (True_class --> Predicted_class):")
+for i,true_label,pred_label in mis[:10]:
+    print(f"{class_names[true_label]}  -->  {class_names[pred_label]}")
