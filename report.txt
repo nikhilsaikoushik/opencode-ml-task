@@ -1,4 +1,4 @@
-Task 1: Distance-Based Classification using KNN 
+Task 1: Distance-Based Classification using KNN of Fashion-MNIST
 
 1. Objective
 The aim of this task is to understand how distance-based classification works.
@@ -14,6 +14,7 @@ Each image is of size 28 × 28 pixels.
 For faster execution, only part of the dataset was used:
 - Training samples: 5000
 - Test samples: 500
+
 Each image was converted into numbers by flattening it into a vector of size 784
 and normalizing the pixel values.
 
@@ -43,6 +44,9 @@ Accuracy shows how many test images were predicted correctly.
 
 Accuracy = Correct predictions / Total test images
 
+The model was tested using different distance methods and different values of K.
+The combination that gave the highest accuracy was selected as the best model.
+
 Some wrong predictions were also printed using class names to understand the
 mistakes made by the model.
 
@@ -52,7 +56,7 @@ The model was tested with different values of K (1, 3, and 5).
 - Small K values can be affected by noise.
 - Larger K values give more stable results.
 
-The best K was chosen based on accuracy.
+The best K value was chosen based on accuracy.
 
 7. Observations
 Some clothes look very similar in the dataset.
@@ -63,5 +67,7 @@ Because of this, the model sometimes confused:
 
 8. Conclusion
 In this task, the KNN algorithm was successfully implemented from scratch.
+Different distance methods and K values were tested, and the best-performing
+model was selected.
 This task helped in understanding how distance-based classification works
 in a simple and clear way.
